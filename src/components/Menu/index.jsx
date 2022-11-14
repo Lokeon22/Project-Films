@@ -16,7 +16,7 @@ export function Menu() {
         onChange={(e) => setSearch(e.target.value)}
         ref={input}
       />
-      <Link to={`/filmes/${search}`}>
+      <Link to={`/filmes/${search.toLowerCase()}`}>
         <AiOutlineSearch
           size={22}
           className="text-white"
