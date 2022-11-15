@@ -13,11 +13,13 @@ export function Card({ title, link, vote, src }) {
         </Link>
         <img
           src={src}
-          className="rounded-md shadow-lg shadow-black w-[250px] object-cover mx-auto my-0"
+          className="rounded-md shadow-md shadow-yellow-600 w-[250px] object-cover mx-auto my-0 hover:shadow-lg hover:shadow-yellow-500 hover:duration-200"
         />
-        <h2 className="text-white text-xl font-medium mt-3 ml-1">{title}</h2>
+        <h2 className="text-white text-xl mt-3 ml-1 font-medium">{title}</h2>
         <label className="flex items-center gap-2 ml-1">
-          <span className="text-slate-100">{vote} / 10</span>
+          <span className="text-slate-100 text-base 2xl:text-lg">
+            {vote} / 10
+          </span>
           <AiFillStar size={20} className="text-yellow-500" />
         </label>
       </div>

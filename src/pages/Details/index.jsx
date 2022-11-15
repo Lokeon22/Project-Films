@@ -40,45 +40,49 @@ export function Details() {
   }, []);
 
   return (
-    <div className="min-w-[300px] pt-[10%] md:max-w-[1200px] md:h-full md:mx-auto my-0">
+    <div className="min-w-[300px] pt-[10%] md:max-w-[1200px] md:h-full md:mx-auto my-0 font-mono">
       <div key={movie.id} className="md:grid md:grid-cols-2">
         <img
           src={`${movie.imgBG}`}
           className="w-[300px] md:w-[350px] mx-auto my-0 md:mx-4 rounded-md md:col-span-1"
         />
         <div className="flex flex-col justify-center mt-2 px-4 md:px-0 md:pr-4">
-          <h2 className="text-white text-xl font-medium text-center md:text-start lg:text-4xl lg:mb-2">
+          <h2 className="text-slate-200 text-xl font-medium text-center md:text-start lg:text-4xl lg:mb-2x">
             {movie.title}
           </h2>
           <label className="flex items-center justify-center gap-2 mb-2 md:justify-start lg:text-2xl">
-            <span className="text-slate-100">{movie.vote} / 10</span>
+            <span className="text-slate-200">{movie.vote} / 10</span>
             <AiFillStar className="text-yellow-500 lg:w-7 lg:h-7" />
           </label>
-          <p className="text-white text-sm text-start mb-2 lg:text-lg xl:mb-4">
+          <p className="text-gray-300 text-sm text-start mb-2 lg:text-lg xl:mb-4">
             <strong className="text-slate-200 text-base lg:text-xl">
               Sinopse:
             </strong>{" "}
             {movie.overview}
           </p>
-          <label className="text-white flex items-center gap-2 mb-2 lg:text-lg">
+          <label className="text-slate-200 flex items-center gap-2 mb-2 lg:text-lg">
             <AiFillCalendar className="text-red-600 lg:w-5 lg:h-5" size={16} />
             <p>Data de lançamento: {movie.release}</p>
           </label>
-          <label className="text-white flex items-center gap-2 mb-2 lg:text-lg">
+          <label className="text-slate-200 flex items-center gap-2 mb-2 lg:text-lg">
             <BsStopwatch className="text-red-600 lg:w-5 lg:h-5" size={16} />
             <p>Duração: {movie.runtime} minutos</p>
           </label>
-          <label className="text-white flex items-center gap-2 mb-2 lg:text-lg">
+          <label className="text-slate-200 flex items-center gap-2 mb-2 lg:text-lg">
             <BiMoviePlay className="text-red-600 lg:w-5 lg:h-5" size={16} />
-            <span>{movie.genre1}</span>
-            <span>{movie.genre2}</span>
+            <span className="bg-red-800 px-2 py-[2px] rounded-xl">
+              {movie.genre1}
+            </span>
+            <span className="bg-red-800 px-2 py-[2px] rounded-xl">
+              {movie.genre2}
+            </span>
           </label>
         </div>
       </div>
       <div className="flex items-center justify-center px-4 md:mt-2 md:flex-col">
         <Link
           to="/"
-          className="text-white text-center bg-red-600 w-full mb-4 py-2  rounded-sm"
+          className="text-slate-200 text-center bg-red-600 w-full mb-4 py-2 rounded-sm hover:text-slate-300 hover:bg-red-800 hover:duration-200"
         >
           Voltar
         </Link>

@@ -22,24 +22,29 @@ export const FilmFiltered = () => {
   }, []);
 
   return (
-    <div className="mt-2">
-      <Link to="/" className="text-white text-2xl px-4">
+    <div className="max-w-[1440px] mx-auto my-0 mt-2">
+      <Link
+        to="/"
+        className="text-white text-2xl px-4 hover:text-slate-300 md:text-3xl"
+      >
         Voltar
       </Link>
-      {filmes.length > 0 ? (
-        filmes.map((filme) => (
-          <div key={filme.id}>
-            <Card
-              title={filme.title}
-              src={`${getImage}${filme.poster_path}`}
-              vote={filme.vote_average}
-              link={`/details/${filme.id}`}
-            />
-          </div>
-        ))
-      ) : (
-        <NotFound />
-      )}
+      <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        {filmes.length > 0 ? (
+          filmes.map((filme) => (
+            <div key={filme.id}>
+              <Card
+                title={filme.title}
+                src={`${getImage}${filme.poster_path}`}
+                vote={filme.vote_average}
+                link={`/details/${filme.id}`}
+              />
+            </div>
+          ))
+        ) : (
+          <NotFound />
+        )}
+      </div>
     </div>
   );
 };
